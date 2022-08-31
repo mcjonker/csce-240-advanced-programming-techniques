@@ -8,17 +8,27 @@ using std::endl;
 using std::string;
 
 int main() {
-  bool functional = true;
+  bool FunctionalEntry = true;
+  
   string input = "";
-  //int test;
-  //int test2;
-  
-  
   cout << "Input: ";
   cin >> input;
-  cout << "OUT: " << input << endl;
-  cout << input[2];
-  cout << input.length() << endl;
+  
+  int i = 0;
+  
+  while(i < input.length()) {
+    bool BaseFound = false;
+    bool ValueFound = false;
+    
+    if(input[i] != " " && BaseFound == false) {
+      base = base+input[i]
+    } else BaseFound = true;
+    
+    
+    cout << "Val = " << input[i] << endl;
+    
+    i++;
+  }
   
   /*
   cin >> test >> test2;
