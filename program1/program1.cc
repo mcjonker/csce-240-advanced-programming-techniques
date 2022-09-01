@@ -1,50 +1,66 @@
 // Copyright 2022 Mitchell Jonker
 
 #include <iostream>
+#include <cmath>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+using std::to_string;
 
 int main() {
+  // Initalize Control Booleans
   bool FunctionalEntry = true;
+  bool IsNegative = false;
   
-  string input = "";
+  int Number;
+  int Base;
+  
   cout << "Input: ";
-  cin >> input;
-  
-  int i = 0;
-  
-  while(i < input.length()) {
-    bool BaseFound = false;
-    bool ValueFound = false;
-    
-    if(input[i] != " " && BaseFound == false) {
-      base = base+input[i]
-    } else BaseFound = true;
-    
-    
-    cout << "Val = " << input[i] << endl;
-    
-    i++;
+  cin >> Number >> Base;
+  // Number cannot be negative, convert if necessary.
+  if (Number < 0) {
+    IsNegative = true;
+    Number = abs(Number);
   }
-  
-  /*
-  cin >> test >> test2;
-  cout << "Output: " << test << " | " << test2 << endl;
-  
-  
-  
-  
-  
-  
-  if(test2 > 9 || test2 < 2) {
+  // Confirm Base's Validity
+  if (Base > 9 || Base < 2) {
     cout << "Base not accepted" << endl;
     return 0;
   }
+  // Confirm Number's Validity.
+  string NumberStr = to_string(Number);
+  int Loop = 0;
+  while (Loop < NumberStr.length() && FunctionalEntry == true) {
+    // Values in the Number cannot be larger than the Base
+    int NumberAt = int(NumberStr[Loop])-48;
+    if (NumberAt >= Base) {
+      // Trigger Function Boolean.
+      FunctionalEntry = false;
+      break;
+    }
+    Loop++;
+  }
+  if (FunctionalEntry == false) {
+    cout << "Invalid Digit(s) in Number!" << endl;
+    return 0;
+  }
   
-  */
+  // Convert bases
+  Loop = 0;
+  int DecimalValue = 0;
+  while (Loop < NumberStr.length() && FunctionalEntry == true) {
+    int Exponent = NumberStr.length()-Loop;
+    int NumberAt = int(NumberStr[Loop])-48;
+    DecimalValue = DecimalValue + (NumberAt * pow(Base,Exponent-1));
+    
+    Loop++;
+  }
+  if (IsNegative == true) {
+    DecimalValue = -1*DecimalValue;
+  }
+  cout << "Output: " << DecimalValue << endl;
   
   return 0;
   
