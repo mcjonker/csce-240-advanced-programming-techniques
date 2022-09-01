@@ -13,28 +13,30 @@ int main() {
   // Initalize Control Booleans
   bool FunctionalEntry = true;
   bool IsNegative = false;
-  
   int Number;
   int Base;
-  
-  cout << "Input: ";
+
+  // cout << "Input: ";
   cin >> Number >> Base;
+
   // Number cannot be negative, convert if necessary.
   if (Number < 0) {
     IsNegative = true;
     Number = abs(Number);
   }
+
   // Confirm Base's Validity
   if (Base > 9 || Base < 2) {
-    cout << "Base not accepted" << endl;
+    cout << "Base Not Accepted" << endl;
     return 0;
   }
+
   // Confirm Number's Validity.
   string NumberStr = to_string(Number);
   int Loop = 0;
   while (Loop < NumberStr.length() && FunctionalEntry == true) {
     // Values in the Number cannot be larger than the Base
-    int NumberAt = int(NumberStr[Loop])-48;
+    int NumberAt = static_cast<int>(NumberStr[Loop])-48;
     if (NumberAt >= Base) {
       // Trigger Function Boolean.
       FunctionalEntry = false;
@@ -43,25 +45,23 @@ int main() {
     Loop++;
   }
   if (FunctionalEntry == false) {
-    cout << "Invalid Digit(s) in Number!" << endl;
+    cout << "Invalid Digit(s) In Number" << endl;
     return 0;
   }
-  
+
   // Convert bases
   Loop = 0;
   int DecimalValue = 0;
   while (Loop < NumberStr.length() && FunctionalEntry == true) {
     int Exponent = NumberStr.length()-Loop;
-    int NumberAt = int(NumberStr[Loop])-48;
-    DecimalValue = DecimalValue + (NumberAt * pow(Base,Exponent-1));
-    
+    int NumberAt = static_cast<int>(NumberStr[Loop])-48;
+    DecimalValue = DecimalValue + (NumberAt * pow(Base, Exponent-1));
     Loop++;
   }
   if (IsNegative == true) {
     DecimalValue = -1*DecimalValue;
   }
-  cout << "Output: " << DecimalValue << endl;
-  
+  // cout << "Output: " << DecimalValue << endl;
+  cout << DecimalValue << endl;
   return 0;
-  
 }
