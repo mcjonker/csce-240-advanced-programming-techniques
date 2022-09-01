@@ -44,6 +44,7 @@ int main() {
     }
     Loop++;
   }
+
   if (FunctionalEntry == false) {
     cout << "Invalid Digit(s) In Number" << endl;
     return 0;
@@ -58,9 +59,11 @@ int main() {
     DecimalValue = DecimalValue + (NumberAt * pow(Base, Exponent-1));
     Loop++;
   }
+
   if (IsNegative == true) {
     DecimalValue = -1*DecimalValue;
   }
+
   // cout << "Output: " << DecimalValue << endl;
   cout << DecimalValue << endl;
   return 0;
