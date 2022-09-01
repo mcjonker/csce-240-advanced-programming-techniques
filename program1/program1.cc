@@ -34,7 +34,7 @@ int main() {
   // Confirm Number's Validity.
   string NumberStr = to_string(Number);
   int Loop = 0;
-  while (Loop < NumberStr.length() && FunctionalEntry == true) {
+  while (Loop < static_cast<int>(NumberStr.length()) && FunctionalEntry == true) {
     // Values in the Number cannot be larger than the Base
     int NumberAt = static_cast<int>(NumberStr[Loop])-48;
     if (NumberAt >= Base) {
@@ -53,7 +53,7 @@ int main() {
   // Convert bases
   Loop = 0;
   int DecimalValue = 0;
-  while (Loop < NumberStr.length() && FunctionalEntry == true) {
+  while (Loop < static_cast<int>(NumberStr.length()) && FunctionalEntry == true) {
     int Exponent = NumberStr.length()-Loop;
     int NumberAt = static_cast<int>(NumberStr[Loop])-48;
     DecimalValue = DecimalValue + (NumberAt * pow(Base, Exponent-1));
