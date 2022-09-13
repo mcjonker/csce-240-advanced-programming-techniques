@@ -1,6 +1,7 @@
 // Copyright 2022 CSCE240
 // unit tests for the OperatorToWords function
-#include<operator_functions.h>
+#include"operator_functions.h"
+#include"operator_functions.cc"
 #include<iostream>
 using std::cout;
 using std::endl;
