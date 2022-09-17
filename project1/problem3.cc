@@ -11,16 +11,17 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::stringstream;
-/*
+
 int main() {
   int input, num;
+  cout << "This Tester Main Method is running to test MWRD function only."
+  << endl;
   cout << "IN: ";
   cin >> input >> num;
   int output = MatchWithReverseDigits(input, num);
   cout << "OUT: " << output << endl;
   return 0;
 }
-*/
 int Reverse(int value) {
   bool IsNegative = false;
   int output;
