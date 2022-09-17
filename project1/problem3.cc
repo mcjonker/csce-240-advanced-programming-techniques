@@ -11,7 +11,6 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::stringstream;
-
 int main() {
   int input, num;
   cout << "This Tester Main Method is running to test MWRD function only."
