@@ -11,6 +11,14 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::stringstream;
+int main() {
+  int input, num;
+  cout << "IN: ";
+  cin >> input >> num;
+  int output = MatchWithReverseDigits(input, num);
+  cout << "OUT: " << output << endl;
+  return 0;
+}
 int Reverse(int value) {
   bool IsNegative = false;
   int output;
