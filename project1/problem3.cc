@@ -4,24 +4,13 @@
 #include <cmath>
 #include <sstream>
 #include <iomanip>
+#include <string>
 #include "problem3.h"
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
 using std::stringstream;
-
-
-int main() {
-  int input,num;
-  cout << "IN: ";
-  cin >> input >> num;
-  int output = MatchWithReverseDigits(input,num);
-  cout << "OUT: " << output << endl;
-  return 0;
-}
-
-
 int Reverse(int value) {
   bool IsNegative = false;
   int output;
@@ -58,7 +47,6 @@ int Reverse(int value) {
 int Reverse(int value, int flips) {
   bool IsNegative = false;
   bool MoreZeros = false;
-  bool BothNegative = false;
   string NumString;
   string SwappedString;
   stringstream ss;
@@ -102,16 +90,13 @@ int Reverse(int value, int flips) {
   i = 0;
   // Add other values in reversed order
   while (i < LoopCount && !MoreZeros) {
-   // cout << "Adding: " << NumString[StringLength-i-1] << endl;
     ss << NumString[StringLength-i-1];
     i++;
   }
   i = 0;
   if (MoreZeros) {
     int temp = Reverse(value);
-    //cout << "TEMPb4: " << temp << endl;
-    temp = temp * pow(10,AddZeros);
-    //cout << "TEMPa5: " << temp << endl;
+    temp = temp * pow(10, AddZeros);
     ss << temp;
   }
   ss >> SwappedString;
@@ -179,10 +164,7 @@ int MatchWithReverseDigits(int value, int compare) {
   }
   int j = 0;
   while (j < MaxLength) {
-    if (Reverse(value,j) == compare) {
-      if (DoubleNeg) {
-        //return ValueLength-1;
-      }
+    if (Reverse(value, j) == compare) {
       return j;
     }
     j++;
