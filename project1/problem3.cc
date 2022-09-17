@@ -58,6 +58,7 @@ int Reverse(int value) {
 int Reverse(int value, int flips) {
   bool IsNegative = false;
   bool MoreZeros = false;
+  bool BothNegative = false;
   string NumString;
   string SwappedString;
   stringstream ss;
@@ -145,8 +146,12 @@ int MatchWithReverseDigits(int value, int compare) {
   // Clear the stream
   ss.str("");
   ss.clear();
+  // Determine if both values are negative.
   if (value < 0 && compare < 0) {
     DoubleNeg = true;
+  }
+  if ((value < 0 && compare > 0) || (value > 0 && compare < 0)) {
+    return -1;
   }
   if (CompareLength > ValueLength) {
     MaxLength = CompareLength;
