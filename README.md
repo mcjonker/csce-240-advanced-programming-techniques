@@ -10,4 +10,4 @@ notified with a reason.
 
 Project/Exams:
 
-- Project 1 .. . . .
+- Project 1 is a set of three problems. Each contains the solutions that require the use of various characteristics of C++, which I demonstrated knowledge in through this Project.
