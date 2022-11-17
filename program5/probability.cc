@@ -61,8 +61,14 @@ void Probability::Multiply(int mult) {
     SetNumerator(GetNumerator());
   }
 }
-string OddsInFavor() {
-  return "";
+string Probability::OddsInFavor() const {
+  int n = numer_;
+  int d = denom_;
+  string n_string = to_string(GetNumerator());
+  string d_string = to_string(GetDenominator()-GetNumerator());
+  string n_s = to_string(n);  // Save by reference
+  string d_s = to_string(d-n);  // Save by reference
+  return n_string+":"+d_string;
 }
 void Probability::Divide(int dividend) {
   if (dividend > 0) {

@@ -14,7 +14,7 @@ class Probability : public Fraction {
     explicit Probability(int numer = 0, int denom = 1);
     explicit Probability(Fraction z);
     bool operator ==(Probability b) const;
-    string OddsInFavor();
+    string OddsInFavor() const;
     void Multiply(int mult);
     void Divide(int dividend);
   private:
