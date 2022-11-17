@@ -46,52 +46,28 @@ Probability::Probability(Fraction z) {
   }
 }
 bool Probability::operator ==(Probability b) const {
-  if ((GetNumerator() * b.GetDenominator()) == (GetDenominator() * b.GetNumerator())) {
+  if ((GetNumerator() * b.GetDenominator())
+      == (GetDenominator() * b.GetNumerator())) {
     return true;
   }
-  //cout << GetNumerator() << "/" << GetDenominator() << endl;
-  //cout << b.GetNumerator() << "/" << b.GetDenominator() << endl;
-  //cout << (GetNumerator() * b.GetDenominator()) << "|" << (GetDenominator() * b.GetNumerator()) << endl;
   return false;
 }
-/*
-Probability operator *(Probability b) const {
-  int numer = numer_ * b.GetNumerator();
-  int denom = denom_ * b.GetDenominator();
-  Probability f;
-  f.SetNumerator(numer);
-  f.SetDenominator(denom);
-  return f;
-}
-*/
 void Probability::Multiply(int mult) {
-  //cout << "mult: " << mult << endl;
-  //cout << "numer: " << GetNumerator() << endl;
   double product = mult*GetNumerator();
-  //cout << "product: " << product << endl;
-  //cout << "fract: " << product << "/" << GetDenominator() << endl;
   double prob = product/GetDenominator();
-  //cout << "probability: " << prob << endl;
   if (prob <= 1 && prob >= 0) {
-    //cout << "ifmet" << endl;
     SetNumerator(product);
   } else {
-    //cout << "ifnot" << endl;
     SetNumerator(GetNumerator());
   }
-  
 }
 string OddsInFavor() {
-  
-  
   return "";
 }
 void Probability::Divide(int dividend) {
   if (dividend > 0) {
     double product = dividend*GetDenominator();
-    //cout << "Prod: " << product << endl;
     SetDenominator(product);
   }
 }
-
 }  // end namespace csce240_program5
