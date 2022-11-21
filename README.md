@@ -15,6 +15,7 @@ TaxID). This program lays out a basic class with constructors, accessors, and mu
 - Program 5 builds on concepts from Program 4 with two classes. Fraction, and then Probability, which is a type of 
 Fraction with some modified functions. This program also shows how operators can be overloaded, changing their 
 behavior based on what is a part of the operation.
+- Program 6
 
 Project/Exams:
 
