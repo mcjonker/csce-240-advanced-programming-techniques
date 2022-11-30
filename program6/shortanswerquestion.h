@@ -1,3 +1,29 @@
+// Copyright 2022 Mitchell Jonker
+// Header implementation by Mitchell Jonker
+
+#ifndef PROGRAM6_SHORTANSWERQUESTION_H_
+#define PROGRAM6_SHORTANSWERQUESTION_H_
+#include <string>
+#include "question.h"
+using std::string;
+
+namespace csce240_program6 {
+
+class ShortAnswerQuestion : public Question {
+  public:
+    explicit ShortAnswerQuestion(string q = "?", string a = "");
+    virtual ~ShortAnswerQuestion() {}
+    void SetAnswer(string a) { answer_ = a; }
+    string GetAnswer() const { return answer_; }
+    virtual void Print(bool include_correct_answer = false) const;
+  private:
+    string answer_;
+};
+
+}  // namespace csce240_program6
+
+#endif  // PROGRAM6_SHORTANSWERQUESTION_H_
+
 // ShortAnswerQuestion should be a child of the Question class
 
 // The class should have a private string data member that holds the correct

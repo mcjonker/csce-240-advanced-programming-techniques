@@ -1,3 +1,30 @@
+// Copyright 2022 Mitchell Jonker
+// Header implementation by Mitchell Jonker
+
+#ifndef PROGRAM6_TRUEFALSEQUESTION_H_
+#define PROGRAM6_TRUEFALSEQUESTION_H_
+#include <string>
+#include "question.h"
+using std::string;
+
+namespace csce240_program6 {
+
+class TrueFalseQuestion : public Question {
+  public:
+    explicit TrueFalseQuestion(string q = "?", bool a = true);
+    virtual ~TrueFalseQuestion() {}
+    void SetAnswer(bool a) { answer_ = a; }
+    bool GetAnswer() const { return answer_; }
+    virtual void Print(bool include_correct_answer = false) const;
+  private:
+    bool answer_;
+};
+
+}  // namespace csce240_program6
+
+#endif  // PROGRAM6_TRUEFALSEQUESTION_H_
+
+
 // TrueFalseQuestion should be a child of the Question class
 
 // The class should have a private bool data member that holds whether the
